@@ -17,7 +17,7 @@ NEWSPIDER_MODULE = "src.spiders"
 #USER_AGENT = "tutorial (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -62,9 +62,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "tutorial.pipelines.TutorialPipeline": 300,
-#}
+ITEM_PIPELINES = {
+    "src.pipelines.FiveGPipeline": 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -91,3 +91,8 @@ ROBOTSTXT_OBEY = True
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+SQLITE_DB_FILE = "/Users/Neil/git/5g-collector/5g.db"
+
+LOG_ENABLED = True
+LOG_FILE = "crawl.log"
+LOG_STDOUT = True
